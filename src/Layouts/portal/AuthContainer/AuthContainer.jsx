@@ -1,20 +1,22 @@
 import React from "react";
-import { Card, CardBody, Col, Row } from "reactstrap";
+import {CardBody, Col, Row } from "reactstrap";
+import { StyledCard } from "./AuthContainer.style";
 
 const AuthContainer = ({ title, children }) => {
   return (
-    <Card className="w-50 center-element p-0">
-      <CardBody>
+    <StyledCard className="center-element">
+      <CardBody style={{ padding: 0 }}>
         <Row>
           <Col md="7">{children}</Col>
-          <Col md="5" className="bg-light-green m-0">
-            <h2 className="p-5 text-light">
-              {title}
-            </h2>
+          <Col
+            md="5"
+            className="bg-light-green m-0 element-wrapper d-none d-md-block"
+          >
+            <h2 className="text-light center-element">{title}</h2>
           </Col>
         </Row>
       </CardBody>
-    </Card>
+    </StyledCard>
   );
 };
 
